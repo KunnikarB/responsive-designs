@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Design</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Poppins:wght@500&family=Source+Sans+3:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/6c722e42cf.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+
+      <!--Header section-->
+      <div class="header">
+        <p class="header__logo">Head<span>.</span></p>
+        <div class="header__menu topnav" id="myTopnav">
+          <a href="#works">Works</a>
+          <a href="#services">Services</a>
+          <a href="#contace">Contacts</a>
+          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-ellipsis"></i>
+          </a>
+        </div>
+      </div>
+      <!--End Of Header section-->
+
+      <!--Main section-->
+      <div class="main">
+        <div class="main__text">
+          <h1>Patagonia</h1>
+          <p>
+            Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec
+            viverra eleifend lacus, vitae ullamcor.
+          </p>
+        </div>
+      </div>
+
+      <div class="main main__image">
+        <img src="./images/Image.jpg" alt="3 horses running" width="864px" height="324px">
+      </div>
+    </div>
+    <!--End of Main section-->
+
+    <!--javaScript section-->
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
+    <!--End Of javaScript Section-->
+
+  </body>
+</html>
