@@ -3,65 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Responsive Design</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Aldrich&family=Poppins:wght@500&family=Source+Sans+3:ital@0;1&display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
-    <link rel="stylesheet" href="styles/style.css" />
+    <title>Responsive Mobile First</title>
     <script
       src="https://kit.fontawesome.com/6c722e42cf.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <div class="container">
+    <nav class="header">
+      <a href="" class="logo"
+        ><p>Head<span>.</span></p>
+      </a>
+      <input class="menu-btn" type="checkbox" id="menu-btn" />
+      <label class="menu-icon" for="menu-btn"
+        ><span class="navicon"></span
+      ></label>
+      <ul class="menu">
+        <li><a href="#works">Works</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contacts">Contacts</a></li>
+      </ul>
+    </nav>
 
-      <!--Header section-->
-      <div class="header">
-        <p class="header__logo">Head<span>.</span></p>
-        <div class="header__menu topnav" id="myTopnav">
-          <a href="#works">Works</a>
-          <a href="#services">Services</a>
-          <a href="#contace">Contacts</a>
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-ellipsis"></i>
-          </a>
+    <main id="main">
+      <!--Section A-->
+      <section id="section-a" class="grid">
+        <div class="content-wrap">
+          <h1 class="content-title">Patagonia</h1>
+          <div class="content-text">
+            <p>
+              Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec.
+              Donec viverra eleifend lacus, vitae ullamcor.
+            </p>
+          </div>
         </div>
-      </div>
-      <!--End Of Header section-->
+      </section>
 
-      <!--Main section-->
-      <div class="main">
-        <div class="main__text">
-          <h1>Patagonia</h1>
-          <p>
-            Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec. Donec
-            viverra eleifend lacus, vitae ullamcor.
-          </p>
+      <!--Section B-->
+      <section id="section-b" class="grid">
+        <div class="card">
+          <img
+            src="images/horses.jpg"
+            alt="3 horses walking in the middle of the forest"
+          />
         </div>
-      </div>
-
-      <div class="main main__image">
-        <img src="./images/Image.jpg" alt="3 horses running" width="864px" height="324px">
-      </div>
-    </div>
-    <!--End of Main section-->
-
-    <!--javaScript section-->
-    <script>
-      function myFunction() {
-        var x = document.getElementById("myTopnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-    </script>
-    <!--End Of javaScript Section-->
-
+      </section>
+    </main>
   </body>
 </html>
