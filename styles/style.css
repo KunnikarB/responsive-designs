@@ -1,241 +1,218 @@
-/* CSS Reset */
-*,
-*::before,
-*::after {
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Poppins:wght@400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-* {
-  padding: 0;
-  margin: 0;
-}
-
 body {
-  margin: 8vw;
-  font-family: "Source Sans 3", "Poppins", "Aldrich", sans-serif;;
-}
-
-.container {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  margin: 8vw;
-}
-
-/*HEADER SECTION*/
-.header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  height: 10%;
-}
-
-.header__logo {
-  font-size: 3vw;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
   color: #242635;
-  font-family: "Aldrich", sans-serif;
-  font-weight: 700;
-  line-height: 36px;
-  letter-spacing: -0.02em;
-  gap: 15px
-}
-
-
-.header__menu {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-.topnav {
-  overflow: hidden;
-  display: flex;
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #242635;
+  font-size: 1.1em;
+  line-height: 1.5;
   text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 3vw;
-  line-height: 22px;
-  font-family: "Source Sans 3", sans-serif;
+  padding: 1em;
 }
 
-.topnav a:hover {
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 1em 0;
+}
+
+p {
+  margin: 0;
+  padding: 1em 0;
+}
+
+/* Nav Section */
+/* header */
+.img-logo{
+  max-width: 1.5em;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.header {
+  box-shadow: 1px 1px 4px 0 rgba(57, 25, 198, 0.1);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
   color: #242635;
 }
 
-.topnav .icon {
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  color: #242635;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  color: #242635;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: #5C7CFA;
+  color: #fff;
+}
+
+.header .logo {
+  font-family: "Aldrich", sans-serif;
+  display: block;
+  float: left;
+  font-size: 1em;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #242635;
+  
+}
+
+/* menu */
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: block;
+  float: right;
+  right: 2rem;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: #242635;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #242635;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 8px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -8px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
   display: none;
 }
-/*END OF HEADER SECTION*/
 
-
-/*MAIN SECTION*/
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  height: 90%;
+.header .menu-btn:checked ~ .menu {
+  max-height: 300px;
 }
 
-.main__text {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 6vh;
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
 }
 
-.main__text h1 {
-  font-size: 7vw;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  line-height: 102px;
-  letter-spacing: -2px;
-  color: #242635; 
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
 }
 
-.main__text p {
-  font-size: 2vw;
-  font-family: "Source Sans 3", sans-serif;
-  line-height: 33px;
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+
+/* Section A */
+#section-a {
+  
   color: #242635;
-}
-.main__image {
-  width: 100%;
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
-/*END OF MAIN SECTION*/
-
-
-
-/*BREAKPOINT FOR DESKTOP*/ 
- @media screen and (max-width: 1200px) {
-
-.topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+  padding-bottom: 2em;
   
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: center;
-  }
-
-  .main__text h1 {
-    font-size: 5vw;
-  }
-
-  .main__text p {
-    font-size: 3vw;
-  }
-
-  .main__image {
-    width: 100%;
-  }
-} 
-
-/*BREAKPOINT FOR TABLET*/
-@media screen and (max-width: 768px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0 ;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: center;
-  }
-
-
-  .header__logo {
-    font-size: 5vw;
-  }
-
-  .header__menu a {
-    font-size: 3vw;
-  }
-  
-  .main__text h1 {
-    font-size: 8vw;
-  }
-
-  .main__text p {
-    font-size: 4vw;
-  }
-
-  .main__image {
-    width: 100%;
-  }
-
 }
 
-/*BREAKPOINT FOR MOBILE*/
-@media screen and (max-width: 576px) {
-  .topnav a {
+#section-a .content-title {
+  margin-top: 8em;
+}
+#section-a .content-text {
+  padding: 1em;
+}
+
+/* Section B */
+#section-b {
+ padding: 2em 1em 1em;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
+
+  }
+
+  .header li {
     float: left;
-    display: none; 
-    font-size: 3vw;
-  }
-
-  .topnav a.icon {
-    float: right;
-    display: inline;
-  }
-
-  .topnav.responsive {
-    position: relative;
-    display: block;
     
   }
-
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+  .header li a {
+    padding: 20px 30px;
   }
 
-  .topnav.responsive a {
-    float: none;
-    text-align: right; 
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+    margin-right: 2em;
   }
 
-  .header__logo {
-    font-size: 6vw;
+  .header .menu-icon {
+    display: none;
   }
 
-  .topnav a.icon {
-    font-size: 6vw;
+  #section-a .content-text p {
+    padding-top: 0;
   }
 
-  .main {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .content-wrap, #section-b .card {
+    grid-column: 2 / 4;
   }
 
-  .main__text h1 {
-    font-size: 6vw;
-  }
-
-  .main__text p {
-    font-size: 4vw;
-  }
-
-  .main__image {
+  #section-b img {
     width: 100%;
+    overflow: hidden;
   }
 }
